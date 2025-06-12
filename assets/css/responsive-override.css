@@ -1,0 +1,493 @@
+/* Mobile Barber Platform - Responsive Override Stylesheet */
+
+/* This stylesheet ensures consistent display between desktop and mobile devices */
+
+/* Global Overrides */
+.container {
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Navbar overrides for desktop-like display */
+.navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+}
+
+.navbar-toggler.original-toggler {
+    display: none !important;
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+/* Desktop search container styles */
+.mobile-search-container {
+    display: flex !important;
+    position: relative;
+    padding: 10px;
+    background-color: transparent;
+    z-index: 1000;
+    margin-right: 15px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767.98px) {
+    /* Mobile navigation changes */
+    .navbar-toggler.original-toggler {
+        display: none !important;
+    }
+    
+    .mobile-nav-buttons {
+        display: flex !important;
+    }
+    
+    .mobile-search-container {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #343a40;
+        z-index: 1000;
+        margin-right: 0;
+    }
+    
+    /* Show See More button on mobile */
+    .mobile-see-more {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    /* Hide desktop View All button on mobile */
+    .desktop-view-all {
+        display: none !important;
+    }
+    
+    /* Show only first card in How It Works and Featured Services sections on mobile */
+    section:not(.testimonials) .row .col-md-4:not(:first-child) {
+        display: none !important;
+    }
+    
+    /* Center the first card */
+    section:not(.testimonials) .row .col-md-4:first-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    section:not(.testimonials) .row .col-md-4:first-child .card {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .mobile-search-container.active {
+        display: block !important;
+    }
+    
+    /* Show mobile menu toggle */
+    .navbar-toggler {
+        display: block !important;
+    }
+    
+    /* Allow navbar to collapse on mobile */
+    .navbar-collapse {
+        display: none !important;
+    }
+    
+    .navbar-collapse.show {
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        z-index: 1000;
+        padding: 10px;
+    }
+    
+    /* Stack navbar items vertically on mobile */
+    .navbar-nav {
+        flex-direction: column !important;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    /* Hide desktop search on mobile */
+    .d-lg-flex {
+        display: none !important;
+    }
+    
+    /* Row and column behavior - default */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        justify-content: center;
+    }
+    
+    /* Special layout for sections with 3 columns on mobile */
+    /* How It Works, Featured Services, and What Our Customers Say sections */
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+    
+    /* Mobile view for How It Works and Featured Services sections */
+    section.mb-5:nth-of-type(1) .row .col-md-4,
+    section.mb-5:nth-of-type(2) .row .col-md-4 {
+        display: none;
+    }
+     
+    /* Only show the first card in How It Works and Featured Services */
+    section.mb-5:nth-of-type(1) .row .col-md-4:first-child,
+    section.mb-5:nth-of-type(2) .row .col-md-4:first-child {
+        display: block;
+        flex: 0 0 80%;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Show See More button container for How It Works and Featured Services */
+    section.mb-5:nth-of-type(1) .mobile-see-more,
+    section.mb-5:nth-of-type(2) .mobile-see-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    /* Hide See More button on desktop */
+    .mobile-see-more {
+        display: none;
+    }
+    
+    /* Style for the See More button */
+    .mobile-see-more .btn {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-see-more .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    }
+    
+    /* Hide desktop View All button on mobile */
+    .desktop-view-all {
+        display: block;
+    }
+    
+    /* Specifically target testimonials section */
+ .testimonials .row {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 300%;
+    margin: 0;
+    position: relative;
+}
+    
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        min-width: 300px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    /* Hero section */
+    .hero {
+        padding: 100px 0;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.25rem;
+    }
+    
+    /* Service and Barber cards */
+    .service-card, .barber-card {
+        height: 100%;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .service-card img, .barber-card img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Chat interface */
+    .chat-container {
+        height: 600px;
+        flex-direction: row;
+    }
+    
+    .chat-sidebar {
+        width: 300px;
+    }
+    
+    /* Footer - custom mobile layout */
+    footer .row:first-of-type {
+        flex-wrap: wrap;
+        overflow-x: visible;
+    }
+    
+    /* First two columns side by side */
+    footer .row:first-of-type .col-md-4:nth-child(1),
+    footer .row:first-of-type .col-md-4:nth-child(2) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        min-width: 0;
+        margin-bottom: 20px;
+    }
+    
+    /* Contact Us below the first two columns */
+    footer .row:first-of-type .col-md-4:nth-child(3) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 3;
+    }
+    
+    /* Copyright row */
+    footer .row:last-child {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    footer .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center !important;
+    }
+    
+    footer .text-md-end {
+        text-align: center !important;
+        margin-top: 10px;
+    }
+    
+    
+    
+    /* Hide all testimonials except the active one on mobile */
+    .testimonial-item {
+    width: 33.333%;
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+    display: flex !important;
+    justify-content: center;
+}
+    
+    /* Show only the active testimonial */
+    .testimonial-item.active {
+        display: flex !important;
+    }
+    
+    /* By default, show the first testimonial */
+    .testimonial-item[data-index="0"] {
+        display: flex !important;
+    }
+     
+    /* Testimonial section styles - matching service cards */
+.testimonial-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    height: 100%;
+    background-color: #fff;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-header {
+    padding: 1rem 1.5rem 0;
+}
+
+.testimonial-card .barber-rating {
+    color: #FFD700;
+    font-size: 1rem;
+}
+
+.testimonial-card .barber-rating i {
+    margin-right: 2px;
+}
+
+.testimonial-card .card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.testimonial-card .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-card .rounded-circle {
+    border: 2px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.testimonial-card h6 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.testimonial-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.testimonial-pagination .testimonial-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.testimonial-pagination .testimonial-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.testimonial-nav .btn-secondary {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Enhanced Testimonial Auto-Carousel for Mobile */
+
+/* Desktop styles for testimonials - keep existing behavior */
+@media (min-width: 768px) {
+    .testimonial-slider {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .testimonial-item {
+        display: flex !important;
+        width: 33.333%;
+    }
+    
+    .mobile-only {
+        display: none !important;
+    }
+    
+    .testimonial-nav,
+    .testimonial-pagination {
+        display: none !important;
+    }
+}
+
+/* Mobile testimonial carousel styles */
+/* Mobile testimonial carousel styles - REPLACE existing testimonial CSS */
+@media (max-width: 767.98px) {
+    .testimonials .testimonial-container {
+        position: relative; 
+        overflow: hidden;
+        padding: 20px 10px;
+        width: 100%;
+    }
+    
+    .testimonials .row {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 1s ease-in-out;
+        width: 300%; /* 3 cards * 100% each */
+        margin: 0;
+    }
+
+    .testimonial-item {
+        width: 33.333%;
+        flex: 0 0 33.333%;
+        padding: 0 15px;
+        display: flex !important;
+        justify-content: center;
+    }
+    
+    .testimonial-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Hide navigation controls on mobile */
+    .testimonial-nav {
+        display: none !important;
+    }
+    
+    .testimonial-pagination {
+        display: none !important;
+    }
+    
+    .auto-play-control {
+        display: none !important;
+    }
+    
+    .auto-play-indicator {
+        display: none !important;
+    }
+}
+
+/* Desktop styles - show all testimonials side by side */
+@media (min-width: 768px) { 
+    .testimonial-item {
+        display: flex !important;
+        width: 33.333%;
+    }
+    
+    .testimonial-nav,
+    .testimonial-pagination {
+        display: none !important;
+    }
+}
+}
